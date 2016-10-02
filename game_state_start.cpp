@@ -38,12 +38,17 @@ void GameStateStart::update(const float dt)
                 this->game->background.setScale(float(event.size.width)/float(this->game->background.getTexture()->getSize().x), float(event.size.height)/float(this->game->background.getTexture()->getSize().y));
                 break;
             }
+            // Key pressed controls
             case sf::Event::KeyPressed:
             {
                 if(event.key.code == sf::Keyboard::Escape)
                     this->game->window.close();
-                    break;
+                else if(event.key.code == sf::Keyboard::Space)
+                    this->loadgame();
+                    
+                break;
             }
+
             default:
                 break;
         }
