@@ -52,6 +52,11 @@ void GameStateStart::update(const float dt)
     return;
 }
 
+void GameStateStart::loadgame(){
+    this->game->pushState(new GameStateEditor(this->game));
+    return;
+}
+
 GameStateStart::GameStateStart(Game* game){
     this->game = game;
     sf::Vector2f pos = sf::Vector2f(this->game->window.getSize());
